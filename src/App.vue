@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <header></header>
+    <Header></Header>
     <div class="row">
       <div class="col-md-12">
         <router-view></router-view>
@@ -13,7 +13,7 @@
 import Header from './components/Header.vue';
 export default {
   components: {
-    header: Header
+    Header
   }
 }
 </script>
