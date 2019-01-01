@@ -15,7 +15,7 @@ const mutations = {
 
 const actions = {
     buyStock: ({commit}, order) => { //we use destructuring to only take the commit property
-        commit();
+        commit('BUY_STOCK', order);
     },
     initStocks: ({commit}) => {
         commit('SET_STOCKS', stocks);
