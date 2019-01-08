@@ -1,6 +1,6 @@
 <template>
     <div class="col-sm-6 col-md-4">
-        <div class="panel panel-success">
+        <div class="panel panel-info">
             <div class="panel-heading">
                 <h3 class="panel-title"> {{ stock.name }} <small>(Price: {{ stock.price }} | Quantity: {{ stock.quantity }})</small></h3>
             </div>
@@ -36,6 +36,8 @@ export default {
                 quantity: this.quantity,
                 stockPrice: this.stock.price
             };
+            this.sell(order);
+            this.quantity = 0;
         }
     }
 }
