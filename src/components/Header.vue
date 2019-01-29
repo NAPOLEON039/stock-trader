@@ -41,23 +41,24 @@ export default {
         }
     },
     methods: {
-        ...mapActions([
-            'randomizeStocks'
-        ]),
+        ...mapActions({
+            randomizeStocks: 'randomizeStocks',
+            fetchData: 'loadData'
+        }),
         endDay() {
             this.randomizeStocks();
         },
         saveData() {
             const data = {
                 funds: this.$store.getters.funds,
-                stockPortoflio: this.$store.getters.stockPortoflio,
+                stockPortfolio: this.$store.getters.stockPortoflio,
                 stocks: this.$store.getters.stocks
             };
             //using the put method with Firebase db replaces existing data with a new one. This is fine in this case where we only care about our recent data
             this.$http.put('data.json', data); 
         },
         loadData() {
-            
+           this.fetchData(); 
         }
     }
 }
